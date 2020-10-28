@@ -1,5 +1,5 @@
 Deskripsi Project  
-Temas SDGS 14 :Kelautan
+Temas SDGS 14 : Kelautan
 Ide Applikasi : SaveOurSea merupakan nama applikasi yang akan kita buat dengan tujuan nantinya para pengguna dapat mengetahui hal-hal apa saja yang dapat merusak laut dan bagaimana cara/langkah untuk menanganinya,dengan adanya applikasi kita berharap untuk kedepannya masyarakat dapat mengerti kepentingan untuk menjaga laut.
 
 Progress Update :
