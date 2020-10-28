@@ -6,6 +6,4 @@ Progress Update :
   1. Halaman Login
   2. Halaman Register
   
- Nama Kelompok : 1. Yogi Eka Wicaksono 182410102026
-                 2. Imron Prasetiyoo 182410102059
-                 3. Sastra Rianto 182410102062
+ Nama Kelompok : Yogi Eka Wicaksono 182410102026, Imron Prasetiyoo 182410102059, Sastra Rianto 182410102062
