@@ -2,6 +2,8 @@ import 'package:projek_mobile/constanst.dart';
 import 'package:flutter/material.dart';
 import 'package:projek_mobile/register.dart';
 
+import 'beranda.dart';
+
 class LoginPage extends StatelessWidget {
   static const routename= "/login";
   @override
@@ -41,7 +43,7 @@ class LoginPage extends StatelessWidget {
             padding: EdgeInsets.only(top: 16.0),
           ),
           Text(
-            "LOGINN",
+            "LOGIN",
             style: TextStyle(
               color: Colors.white,fontFamily: "Poppins-Medium",
               fontSize: 16.0,
@@ -105,21 +107,22 @@ class LoginPage extends StatelessWidget {
       return Column(
         children: <Widget>[
           Padding(padding: EdgeInsets.only(top: 16.0),),
-          InkWell(
-            child: Container(
-              padding: EdgeInsets.symmetric(vertical: 8.0),
-              width: double.infinity,
-              child: Text("Login",style: TextStyle(color: ColorPalette.primaryColor,fontFamily: "Poppins-Medium",fontSize: 20),
-              textAlign: TextAlign.center,
-            ),
-            decoration: BoxDecoration(
-              color: Colors.white,
-              borderRadius: BorderRadius.circular(30.0)
-            ),
-          ), 
-          ),
+          // InkWell(
+          //   child: Container(
+          //     padding: EdgeInsets.symmetric(vertical: 8.0),
+          //     width: double.infinity,
+          //     child: Text("Login",style: TextStyle(color: ColorPalette.primaryColor,fontFamily: "Poppins-Medium",fontSize: 20),
+          //     textAlign: TextAlign.center,
+          //   ),
+          //   decoration: BoxDecoration(
+          //     color: Colors.white,
+          //     borderRadius: BorderRadius.circular(30.0)
+          //   ),
+          // ), 
+          // ),
           Padding(padding: EdgeInsets.only(top: 16.0),),
-          Text("OR",style: TextStyle(color: Colors.white,fontFamily: "Poppins-Medium",fontSize: 15),),
+          // Text("OR",style: TextStyle(color: Colors.white,fontFamily: "Poppins-Medium",fontSize: 15),),
+          FlatButton(child: Text("Login",style: TextStyle(color: Colors.white,fontFamily: "Poppins-Medium",fontSize: 20),),onPressed: (){Navigator.pushNamed(context, Beranda.routename);},),
           FlatButton(child: Text("Register",style: TextStyle(color: Colors.white,fontFamily: "Poppins-Medium",fontSize: 20),),onPressed: (){Navigator.pushNamed(context, RegisterPage.routename);},)
           
         ],
