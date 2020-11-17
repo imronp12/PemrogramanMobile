@@ -130,21 +130,22 @@ class RegisterPage extends StatelessWidget {
       return Column(
         children: <Widget>[
           Padding(padding: EdgeInsets.only(top: 16.0),),
-          InkWell(
-            child: Container(
-              padding: EdgeInsets.symmetric(vertical: 8.0),
-              width: double.infinity,
-              child: Text("Register",style: TextStyle(color: ColorPalette.primaryColor,fontFamily: "Poppins-Medium",fontSize: 20),
-              textAlign: TextAlign.center,
-            ),
-            decoration: BoxDecoration(
-              color: Colors.white,
-              borderRadius: BorderRadius.circular(30.0)
-            ),
-          ), 
-          ),
+          // InkWell(
+          //   child: Container(
+          //     padding: EdgeInsets.symmetric(vertical: 8.0),
+          //     width: double.infinity,
+          //     child: Text("Register",style: TextStyle(color: ColorPalette.primaryColor,fontFamily: "Poppins-Medium",fontSize: 20),
+          //     textAlign: TextAlign.center,
+          //   ),
+          //   decoration: BoxDecoration(
+          //     color: Colors.white,
+          //     borderRadius: BorderRadius.circular(30.0)
+          //   ),
+          // ), 
+          // ),
           Padding(padding: EdgeInsets.only(top: 16.0),),
-          Text("OR",style: TextStyle(color: Colors.white,fontFamily: "Poppins-Medium",fontSize: 15),),
+          // Text("OR",style: TextStyle(color: Colors.white,fontFamily: "Poppins-Medium",fontSize: 15),),
+          FlatButton(child: Text("Register",style: TextStyle(color: Colors.white,fontFamily: "Poppins-Medium",fontSize: 20),),onPressed: (){Navigator.pushNamed(context, null);},),
           FlatButton(child: Text("Login",style: TextStyle(color: Colors.white,fontFamily: "Poppins-Medium",fontSize: 20),),onPressed: (){Navigator.pushNamed(context, "/");},)
           
         ],
