@@ -154,6 +154,9 @@ class LoginPage extends StatelessWidget {
             if(inputUser == username &&
                inputPassword == password)
             Navigator.pushNamed(context, Beranda.routename);
+            else{
+              return _alert(context);
+            }
           },
         ),
         FlatButton(
@@ -171,4 +174,24 @@ class LoginPage extends StatelessWidget {
       ],
     );
   }
+  void _alert(context) {
+    AlertDialog alertDialog = new AlertDialog(
+      content: new Container(
+        height: 200.0,
+        child: new Center(
+          child: new Text("Email atau Password Yang Anda Masukan Salah"),
+        ),
+      ),
+      actions: [
+        FlatButton(
+          child: Text('Tutup'),
+          onPressed: () {
+            Navigator.of(context).pop();
+          },
+        ),
+      ],
+    );
+    showDialog(context: context, child: alertDialog, barrierDismissible: false,);
+  }
+  
 }
