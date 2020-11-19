@@ -1,78 +1,74 @@
 
-
 import 'package:flutter/material.dart';
+import 'package:projek_mobile/constanst.dart';
 
+import '../bottomnav.dart';
 
 
 class Beranda extends StatefulWidget {
   @override
   static const routename= "/dashboard";
-  static const IconData account_circle_sharp = IconData(0xeb10, fontFamily: 'MaterialIcons');
-  _MyAppState createState() => _MyAppState();
+  _DashboardState createState() => _DashboardState();
 }
 
-class _MyAppState extends State<Beranda> {
-   int _selectedIndex = 0;
-  static const TextStyle optionStyle =
-  TextStyle(fontSize: 30, fontWeight: FontWeight.bold);
-  static const List<Widget> _widgetOptions = <Widget>[
-    Text(
-      'Halaman Beranda',
-      style: optionStyle,
-    ),
-    Text(
-      'Halaman Halaman 2',
-      style: optionStyle,
-    ),
-    Text(
-      'Halaman Halaman 3',
-      style: optionStyle,
-    ),
-    Text(
-      'Halaman Halaman 3',
-      style: optionStyle,
-    ),
-  ];
-  void _onItemTapped(int index) {
-    setState(() {
-      _selectedIndex = index;
-    });
-  }
+class _DashboardState extends State<Beranda> {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: Scaffold(
-        appBar: AppBar(
-          title: Text("Dashboard"),
-        ),
-        body: Center(
-          child: _widgetOptions.elementAt(_selectedIndex),
-        ),
-        bottomNavigationBar: BottomNavigationBar(
-        items: const <BottomNavigationBarItem>[
-          BottomNavigationBarItem(
-            icon: Icon(Icons.home,color: Colors.blueAccent,),
-            title: Text('Beranda',style: TextStyle(color: Colors.blueAccent),),
+    return Scaffold(
+      appBar: AppBar(title: Text("SDGS Kelompok 14"),),
+      body: ListView(
+        children: [
+          Container(
+            color: ColorPalette.primaryColor,
+            child: Card(
+              color: ColorPalette.underlineTextField,
+                clipBehavior: Clip.antiAlias,
+                child: Column(
+                  children: [
+                    ListTile(
+                      leading: Icon(Icons.arrow_drop_down_circle),
+                      title: const Text('Penyuluhan Tentang Budidaya Rumput Laut'),
+                      subtitle: Text(
+                        'Dinas Kelautan',
+                        style: TextStyle(color: Colors.black.withOpacity(0.6)),
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.all(16.0),
+                      child: Text(
+                        'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.',
+                        style: TextStyle(color: Colors.black.withOpacity(0.6)),
+                      ),
+                    ),
+                    ButtonBar(
+                      alignment: MainAxisAlignment.start,
+                      children: [
+                        FlatButton(
+                          onPressed: () {
+                            // Perform some action
+                          },
+                          child: const Text('ACTION 1'),
+                        ),
+                        FlatButton(
+                          onPressed: () {
+                            // Perform some action
+                          },
+                          child: const Text('ACTION 2'),
+                        ),
+                      ],
+                    ),
+                    Image.asset('assets/images/icon.jpg'),
+                  ],
+                ),
+              ),
           ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.business, color: Colors.blueAccent,),
-            title: Text('Informasi', style: TextStyle(color: Colors.blueAccent),),
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.person_outline,color: Colors.blueAccent,),
-            title: Text('Profile',style: TextStyle(color: Colors.blueAccent),),
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.exit_to_app,color: Colors.blueAccent,),
-            title: Text('Exit',style: TextStyle(color: Colors.blueAccent),),
-          )
         ],
-        currentIndex: _selectedIndex,
-        selectedItemColor: Colors.amber[800],
-        onTap: _onItemTapped,
-        ),
-      )
+      ),
+      
+    
+        
+        floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+        bottomNavigationBar: BottomBar(),
     );
   }
 }
