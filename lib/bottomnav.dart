@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:projek_mobile/constanst.dart';
+import 'package:projek_mobile/detail.dart';
 import 'package:projek_mobile/screens/loginView.dart';
 import 'package:projek_mobile/screens/profile.dart';
 
@@ -36,7 +37,7 @@ class BottomBar extends StatelessWidget {
                                 Navigator.of(context).push(
                                   MaterialPageRoute(
                                       builder: (context){
-                                        // return ProfilPage();
+                                        ;
                                       }
                                   ),
                                 );
@@ -69,7 +70,7 @@ class BottomBar extends StatelessWidget {
                                 Navigator.of(context).push(
                                   MaterialPageRoute(
                                       builder: (context){
-                                        // return Laporan();
+                                         return DetailsPage();
                                       }
                                   ),
                                 );

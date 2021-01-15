@@ -1,9 +1,29 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
+import 'package:image_picker/image_picker.dart';
 import 'package:projek_mobile/constanst.dart';
 import 'package:projek_mobile/screens/beranda.dart';
 
-class ProfilPage extends StatelessWidget {
+
+class ProfilPage extends StatefulWidget {
   static const routename = "/profilepage";
+
+  @override
+  _ProfilPageState createState() => _ProfilPageState();
+}
+
+class _ProfilPageState extends State<ProfilPage> {
+  File _picture;
+
+  Future getImage() async{
+    var picture = await ImagePicker.pickImage(source: ImageSource.camera);
+
+    setState(() {
+    _picture = picture;
+
+});
+  }
 
   Widget textfield({@required String hintText}) {
     return Material(
@@ -100,30 +120,34 @@ class ProfilPage extends StatelessWidget {
                       fontWeight: FontWeight.w600),
                 ),
               ),
-              Container(
-                padding: EdgeInsets.all(10.0),
-                width: MediaQuery.of(context).size.width / 2,
-                height: MediaQuery.of(context).size.width / 2,
-                decoration: BoxDecoration(
-                    border: Border.all(color: Colors.white, width: 5),
-                    shape: BoxShape.circle,
-                    color: Colors.white,
-                    image: DecorationImage(
-                        fit: BoxFit.cover,
-                        image: AssetImage('assets/images/icon.jpg'))),
+              Column(
+                children: [
+                  Container(
+                    padding: EdgeInsets.all(10.0),
+                    width: MediaQuery.of(context).size.width / 2,
+                    height: MediaQuery.of(context).size.width / 2,
+                    decoration: BoxDecoration(
+                      border: Border.all(color: Colors.white, width: 5),
+                      shape: BoxShape.circle,
+                      color: Colors.white
+                    ),
+                    child:_picture == null ? IconButton(icon: Icon(Icons.edit,color:Colors.white,), onPressed: getImage) :Image.file(_picture)
+                  ),
+                ],
               )
             ],
           ),
           Padding(
             padding: EdgeInsets.only(bottom: 270, left: 184),
             child: CircleAvatar(
+              
               backgroundColor: Colors.black54,
-              child: IconButton(
-                  icon: Icon(
-                    Icons.edit,
-                    color: Colors.white,
-                  ),
-                  onPressed: () {}),
+              // child: IconButton(
+              //     icon: Icon(
+              //       Icons.edit,
+              //       color: Colors.white,
+              //     ),
+              //     onPressed: getImage ),
             ),
           )
         ],
